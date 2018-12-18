@@ -27,6 +27,13 @@ public class Circus implements World {
         this.width = width;
         this.height = height;
         this.difficulty = difficulty;
+        ImageObject bg = new ImageObject(0, 0, "/aaa.jpg");
+        constant.add(bg);
+        ImageObject clown = new ImageObject(width/3, (int)(height*0.6), "/clown.png");
+        control.add(clown);
+        // moving objects (plates)
+        for(int i=0; i < 10; i++)
+            moving.add(new ImageObject((int)(Math.random()*width), (int)(Math.random()*height/2), "/plate.png"));
     }
 
     @Override
@@ -59,7 +66,7 @@ public class Circus implements World {
         boolean timeout = System.currentTimeMillis() - startTime > MAX_TIME; // time end and game over
 
         // get Clown from here
-        ImageObject fighter = (ImageObject)control.get(0);
+        ImageObject clown = (ImageObject)control.get(0);
 
         // handle moving plates here
         for(GameObject o : moving.toArray(new GameObject[moving.size()])){
@@ -70,7 +77,7 @@ public class Circus implements World {
                     o.setX((int)(Math.random() * getWidth()));
                 }
                 o.setX(o.getX() + (Math.random() > 0.5 ? 2 : -2));
-                if(!timeout & o.isVisible() && intersect(o, fighter)) {
+                if(!timeout & o.isVisible() && intersect(o, clown)) {
                     // clown caught a plate here
                 }
             }
