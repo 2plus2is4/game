@@ -104,3 +104,4 @@ public class Circus implements World {
         return 20;
     }
 }
+
