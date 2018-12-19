@@ -46,12 +46,12 @@ public class Circus implements World {
 		constant.add(bg);
 		state = new ControlledImageObject(width / 3, (int) (height * 0.6));
 		ImageObject clown = new ImageObject(width / 3, (int) (height * 0.6), "/clown.png", state);
-		state = new ControlledImageObject(clown.getX()-20,clown.getY()+17);
-		ImageObject dummyL = new ImageObject(clown.getX()-20,clown.getY()+17,"/plate.png",state);
-		//dummyL.setVisible(false);
-		state = new ControlledImageObject(clown.getX()+clown.getWidth()-55,clown.getY()+17);
-		ImageObject dummyR = new ImageObject(clown.getX()+clown.getWidth()-55,clown.getY()+17,"/plate.png",state);
-		//dummyR.setVisible(false);
+		state = new ControlledImageObject(clown.getX()-17,clown.getY()+37);
+		ImageObject dummyL = new ImageObject(clown.getX()-17,clown.getY()+37,"/plate.png",state);
+		dummyL.setVisible(false);
+		state = new ControlledImageObject(clown.getX()+clown.getWidth()-50,clown.getY()+40);
+		ImageObject dummyR = new ImageObject(clown.getX()+clown.getWidth()-50,clown.getY()+40,"/plate.png",state);
+		dummyR.setVisible(false);
 		control.add(clown);
 		control.add(dummyL);
 		control.add(dummyR);
@@ -146,7 +146,7 @@ public class Circus implements World {
 		//System.out.println(o1.getX());
 		//System.out.println(o1.getWidth());
 		/*&& o1.getY() + o1.getHeight() <= o2.getY()+2*/
-		if (o1.getY() + o1.getHeight() == o2.getY()  && (midx <= o2.getX() + 40 && midx >= o2.getX())) {
+		if (o1.getY() + o1.getHeight() == o2.getY()  && (midx <= o2.getX() + o2.getWidth() && midx >= o2.getX())) {
 			System.out.println("true");
 			return true;
 		}
