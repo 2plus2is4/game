@@ -9,6 +9,10 @@
 .idea/
 .settings/
 
+# large files (MUSIC)
+*.mp3
+*.wav
+
 # BlueJ files
 *.ctxt
 
