@@ -5,8 +5,8 @@ import eg.edu.alexu.csd.oop.game.World;
 import observer.*;
 import observer.Observer;
 import strategy_difficulty.Strategy;
-import tests.Iterator;
-import tests.Iterator_concrete;
+import iterator.Iterator;
+import iterator.Iterator_concrete;
 import to_come.ConstantImageObject;
 import to_come.ControlledImageObject;
 import to_come.ImageObject;
@@ -59,9 +59,11 @@ public class Circus implements World {
 		controlR.add(dummyR);
 		controlL.add(dummyL);
 		//TODO first state in memento
-		
+
+        //play some music
+        addition_classes.Sound.getInstance().startCircusSound();
 		// moving objects (plates)
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 25; i++) {
 			state = new MovingImageObject();
 			moving.add(new ImageObject((int) (Math.random() * width), (int) (Math.random() * height / 2), "/plate.png",
 					state));

@@ -20,7 +20,7 @@ public class Sound {
 
 	public void startCircusSound() {
 		try {
-			URL url = Sound.class.getResource("/pics/circussound.wav");
+			URL url = Sound.class.getResource("/theme.wav");
 			AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
 			clipCircus = AudioSystem.getClip();
 			clipCircus.open(audioIn);
