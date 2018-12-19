@@ -27,11 +27,11 @@ public class Circus implements World {
 	private Observer s;
 	private Observer sc;
 	private boolean flag = false;
-	private final ArrayList<GameObject> constant = new ArrayList<GameObject>();
-	private final ArrayList<GameObject> moving = new ArrayList<GameObject>();
-	private final ArrayList<GameObject> control = new ArrayList<GameObject>();
-	private final ArrayList<GameObject> controlL = new ArrayList<GameObject>();
-	private final ArrayList<GameObject> controlR = new ArrayList<GameObject>();
+	private  ArrayList<GameObject> constant = new ArrayList<GameObject>();
+	private  ArrayList<GameObject> moving = new ArrayList<GameObject>();
+	private  ArrayList<GameObject> control = new ArrayList<GameObject>();
+	private  ArrayList<GameObject> controlL = new ArrayList<GameObject>();
+	private  ArrayList<GameObject> controlR = new ArrayList<GameObject>();
 	private List<Observer> observers = new ArrayList<Observer>();
 	private Iterator_concrete xx;
 
@@ -108,7 +108,7 @@ public class Circus implements World {
 		xx = new Iterator_concrete(moving); // handle moving plates here
 		
 		for (Iterator iter = xx.getIterator(0); iter.hasNext();) {
-			GameObject 	o = (GameObject) iter.next();
+			ImageObject 	o =  (ImageObject) iter.next();
 			o.setY((o.getY() + 1));
 			if (o.getY() + 100 >= getHeight()) {
 				// reuse the plate in another position
@@ -120,11 +120,11 @@ public class Circus implements World {
 			if (!timeout & o.isVisible() && (intersect(o, lastplateL))) {
 				moving.remove(o);
 				State state = new ControlledImageObject(o.getX(),o.getY());
-				((ImageObject) o).setState(state);
+				 o.setState(state);
 				control.add(o);
 				controlL.add(o);
 				//this.notifyAllObserver();
-			} else if (!timeout & o.isVisible() && (intersect(o, lastplateR))) {
+			}  if (!timeout & o.isVisible() && (intersect(o, lastplateR))) {
 				// clown caught a plate here on the right side
 				moving.remove(o);
 				State state = new ControlledImageObject(o.getX(),o.getY());
@@ -142,10 +142,11 @@ public class Circus implements World {
 	// al taba2 b3dha l taba2 ele fo2
 	// m7taga design pattern ?
 	private boolean intersect(GameObject o1, GameObject o2) {
-		int midx = (o1.getX() + o1.getWidth()) / 2;
+		int midx = (o1.getX() +o1.getX()+ o1.getWidth()) / 2;
 		//System.out.println(o1.getX());
 		//System.out.println(o1.getWidth());
-		if (o1.getY() + o1.getHeight() == o2.getY() && (midx <= o2.getX() + o2.getWidth() && midx >= o2.getX())) {
+		/*&& o1.getY() + o1.getHeight() <= o2.getY()+2*/
+		if (o1.getY() + o1.getHeight() == o2.getY()  && (midx <= o2.getX() + 40 && midx >= o2.getX())) {
 			System.out.println("true");
 			return true;
 		}
