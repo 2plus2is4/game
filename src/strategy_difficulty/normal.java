@@ -11,7 +11,7 @@ public class normal implements Strategy {
 	@Override
 	public int time() {
 		// TODO Auto-generated method stub
-		return 10;
+		return 2000;
 	}
 
 	@Override

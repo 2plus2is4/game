@@ -4,6 +4,11 @@ import world_class.Circus;
 import momento.*;
 
 public class plateServer extends Observer{
+    @Override
+    public void update() {
+
+    }
+    /*
     private Circus game;
     public plateServer(Circus game){
         this.game = game;
@@ -23,5 +28,5 @@ public class plateServer extends Observer{
 
     }
 
-
+*/
 }

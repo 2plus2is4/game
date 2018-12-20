@@ -130,6 +130,7 @@ public class Circus implements World {
 			t = new Time(this);
 			s = new Sound(this);
 			sc = new Score(this);
+			flag = true;
 		}
 		boolean timeout = System.currentTimeMillis() - startTime > MAX_TIME; // time end and game over
 
@@ -262,7 +263,7 @@ public class Circus implements World {
 	}
 
 	public void setScore(int score) {
-		this.score += score;
+		this.score = score;
 	}
 
 	private void saveStateL() {

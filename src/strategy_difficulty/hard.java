@@ -5,7 +5,7 @@ public class hard implements Strategy {
 	@Override
 	public int speed() {
 		// TODO Auto-generated method stub
-		return 20;
+		return 10;
 	}
 
 	@Override

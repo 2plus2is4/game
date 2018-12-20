@@ -9,7 +9,7 @@ import javax.swing.JMenuItem;
 
 import eg.edu.alexu.csd.oop.game.GameEngine;
 import eg.edu.alexu.csd.oop.game.GameEngine.GameController;
-import strategy_difficulty.hard;
+import strategy_difficulty.*;
 import world_class.Circus;
 
 public class Main {
