@@ -9,6 +9,7 @@ public class Time extends Observer {
 
 	public Time(Circus game) {
 		this.game = game;
+		this.strategy=game.getDifficulty();
 		game.attach(this);
 	}
 

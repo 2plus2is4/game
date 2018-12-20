@@ -15,7 +15,7 @@ import world_class.Circus;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Uncomment any of the lines in the Main to run a new game, Have Fun :)");
+        //System.out.println("Uncomment any of the lines in the Main to run a new game, Have Fun :)");
 
         /* -------------------------------------------------------------------- */
         /* using default background color */

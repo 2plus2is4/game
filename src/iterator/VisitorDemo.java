@@ -1,4 +1,4 @@
-package tests;
+package iterator;
 
 interface CarElement {
     void accept(CarElementVisitor visitor);

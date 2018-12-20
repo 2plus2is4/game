@@ -11,7 +11,7 @@ public class hard implements Strategy {
 	@Override
 	public int time() {
 		// TODO Auto-generated method stub
-		return 5;
+		return 1000;
 	}
 
 	@Override

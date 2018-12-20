@@ -9,6 +9,7 @@ public class Score extends Observer {
 
 	public Score(Circus game) {
 		this.game = game;
+		this.strategy=game.getDifficulty();
 		game.attach(this);
 	}
 

@@ -1,7 +1,5 @@
 package to_come;
 
-import tests.Iterator;
-import tests.Iterator_concrete;
 import java.util.ArrayList;
 
 public class FlyWeight {
